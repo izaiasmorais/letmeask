@@ -1,10 +1,12 @@
 # Letmeask
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8843209d-04b6-4d4e-a4f3-971397e09aaa" />
+
 ## Introdução
 
 O Letmeask é uma plataforma para criar e participar de salas de perguntas e respostas em tempo real, ideal para eventos, workshops e aulas. Permite que usuários criem salas, enviem perguntas e interajam de forma colaborativa, promovendo o compartilhamento de conhecimento.
 
-<img src="https://img.shields.io/static/v1?label=STATUS&message=DEVELOPING&color=A855F7&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=REACT&message=19.1.0&color=A855F7&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=LICENSE&message=MIT&color=A855F7&style=for-the-badge"/>
+<img src="https://img.shields.io/static/v1?label=STATUS&message=DEVELOPING&color=8E51FF&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=REACT&message=19.1.0&color=8E51FF&style=for-the-badge"/>
 
 ## Tecnologias
 
