@@ -1,5 +1,5 @@
-import { Banner } from "./banner";
-import { CreateRoomForm } from "./create-room-form";
+import { Banner } from "../components/create-room/banner";
+import { CreateRoomForm } from "../components/create-room/create-room-form";
 
 export function CreateRoom() {
 	return (

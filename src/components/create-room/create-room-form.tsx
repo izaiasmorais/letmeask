@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -28,12 +29,12 @@ export function CreateRoomForm() {
 
 					<span className="flex items-center gap-1 text-slate-500">
 						Quer entrar em uma sala já existente?
-						<a
+						<Link
 							className="text-violet-700 underline hover:text-violet-800"
-							href="/"
+							to="/salas"
 						>
 							Clique aqui
-						</a>
+						</Link>
 					</span>
 				</div>
 			</div>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export function RoomHeader() {
 	return (
-		<header className="w-full">
+		<header className="w-full px-6">
 			<div className="mx-auto flex w-full max-w-[1200px] items-center justify-between py-4">
 				{/** biome-ignore lint/performance/noImgElement: <I have to> */}
 				<img

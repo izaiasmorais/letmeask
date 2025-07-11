@@ -1,5 +1,5 @@
-import { RoomHeader } from "./header";
-import { QuestionsList } from "./questions-list";
+import { QuestionsList } from "@/components/room/questions-list";
+import { RoomHeader } from "@/components/room/room-header";
 
 export function Room() {
 	return (
