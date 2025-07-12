@@ -9,7 +9,7 @@ export function App() {
 			<Routes>
 				<Route element={<CreateRoom />} index />
 				<Route element={<Rooms />} path="/salas" />
-				<Route element={<Room />} path="/sala" />
+				<Route element={<Room />} path="/sala/:id" />
 				{/* <Route element={<Room />} path="/sala/:id" /> */}
 			</Routes>
 		</BrowserRouter>

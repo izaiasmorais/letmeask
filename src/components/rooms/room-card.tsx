@@ -1,5 +1,6 @@
 import { Calendar, ChevronRight, CircleQuestionMark } from "lucide-react";
-import type { Room } from "@/api/get-rooms";
+import { Link } from "react-router-dom";
+import type { Room } from "@/hooks/use-get-rooms";
 import { formatDate } from "@/utils/format-date";
 import { Badge } from "../ui/badge";
 
@@ -9,7 +10,10 @@ interface RoomCardProps {
 
 export function RoomCard({ room }: RoomCardProps) {
 	return (
-		<div className="flex w-full cursor-pointer items-center justify-between rounded-md border-2 bg-white px-6 py-6 transition-colors hover:border-violet-500">
+		<Link
+			className="flex w-full cursor-pointer items-center justify-between rounded-md border-2 bg-white px-6 py-6 transition-colors hover:border-violet-500"
+			to={`/sala/${room.id}`}
+		>
 			<div className="flex flex-col gap-2">
 				<span className="font-medium">{room.name}</span>
 
@@ -27,6 +31,6 @@ export function RoomCard({ room }: RoomCardProps) {
 			</div>
 
 			<ChevronRight size={16} />
-		</div>
+		</Link>
 	);
 }

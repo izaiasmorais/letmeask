@@ -1,26 +1,49 @@
+import { ArrowLeft } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import { useGetRoomById } from "@/hooks/use-get-room-by-id";
+import { CreateQuestionForm } from "./create-question-form";
+import { QuestionCard } from "./questions-card";
+import { QuestionEmptyList } from "./questions-empty-list";
+
 export function QuestionsList() {
+	const { id } = useParams<{ id: string }>();
+
+	const { room, isGetRoomByIdLoading } = useGetRoomById(id || "");
+
+	if (!id) {
+		return (
+			<div className="flex h-[200px] w-full items-center justify-center text-center">
+				<strong className="text-muted-foreground text-xl">
+					Sala não encontrada
+				</strong>
+			</div>
+		);
+	}
+
 	return (
-		<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6">
-			<strong className="text-2xl">Sala React Q&A</strong>
+		<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 px-4 py-6">
+			<div className="flex items-center gap-2">
+				<div className="flex h-10 w-10 cursor-pointer items-center justify-center">
+					<Link to="/salas">
+						<ArrowLeft />
+					</Link>
+				</div>
+
+				<strong className="text-2xl">{room ? room.name : "Indefinida"}</strong>
+			</div>
 
 			<div className="flex items-center justify-center">
-				<div className="flex w-[350px] flex-col items-center space-y-6 text-center">
-					{/** biome-ignore lint/performance/noImgElement: <I have to> */}
-					<img
-						alt="Ilustração de Lista de Questões Vazias"
-						height={150}
-						src="/empty-questions.svg"
-						width={150}
-					/>
+				{!(isGetRoomByIdLoading || room) && <QuestionEmptyList />}
 
-					<div className="flex flex-col gap-2">
-						<strong className="text-lg">Nenhuma pergunta por aqui...</strong>
-						<span className="text-muted-foreground">
-							Envie o código desta sala para seus amigos e comece a responder
-							perguntas!
-						</span>
+				{!isGetRoomByIdLoading && room && (
+					<div className="flex w-full flex-col gap-4">
+						{room && <CreateQuestionForm roomId={room.id} />}
+
+						{room.questions.map((question) => (
+							<QuestionCard key={question.id} question={question} />
+						))}
 					</div>
-				</div>
+				)}
 			</div>
 		</div>
 	);

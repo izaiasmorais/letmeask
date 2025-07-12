@@ -1,5 +1,4 @@
-import { useGetRooms } from "@/api/get-rooms";
-import { Badge } from "../ui/badge";
+import { useGetRooms } from "@/hooks/use-get-rooms";
 import { RoomCard } from "./room-card";
 import { RoomsEmptyList } from "./rooms-empty-list";
 
@@ -10,10 +9,7 @@ export function RoomsList() {
 		<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 px-4 py-6">
 			<div className="flex items-center gap-2">
 				<strong className="text-2xl">Salas</strong>
-
-				<Badge className="text-sm" variant="outline">
-					({rooms.length})
-				</Badge>
+				<span>({rooms.length})</span>
 			</div>
 
 			{!isGetRoomsLoading && rooms.length === 0 && <RoomsEmptyList />}
