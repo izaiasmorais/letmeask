@@ -21,18 +21,16 @@ export function QuestionCard({ question }: QuestionCardProps) {
 						<span className="text-gray-600 text-sm">Anônimo</span>
 					</div>
 
-					<div className="flex items-center gap-2 text-sm">
-						<Calendar size={20}/>
-						<span>
-							{formatDate(question.createdAt)}
-						</span>
+					<div className="flex items-center gap-2 text-gray-600 text-sm">
+						<Calendar size={20} />
+						<span>{formatDate(question.createdAt)}</span>
 					</div>
 				</div>
 
 				<div className="flex items-center space-x-4 text-muted-foreground">
 					<CircleCheck
-						className="cursor-pointer hover:text-violet-700"
-						size={24}
+						className="h-6 w-6 cursor-pointer hover:h-7 hover:w-7 hover:border-violet-700 hover:fill-violet-700 hover:text-white"
+						fill="transparent"
 					/>
 
 					<MessageSquare
