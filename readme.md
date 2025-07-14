@@ -21,10 +21,10 @@ O Letmeask é uma plataforma para criar e participar de salas de perguntas e res
 
 ## Funcionalidades
 
-- [ ] Criação de salas de perguntas e respostas
-- [ ] Entrada em salas existentes por código
-- [ ] Moderação de perguntas
-- [ ] Destaque de perguntas
+- [x] Criação de salas para responder perguntas.
+- [x] Criação de perguntas.
+- [x] Gravação de áudio para alimentar o banco de dados em tempo real.
+- [x] Resposta automatizada de perguntas com inteligência artificial.
 
 ## Instalação
 
