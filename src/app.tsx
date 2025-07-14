@@ -10,8 +10,8 @@ export function App() {
 			<Routes>
 				<Route element={<CreateRoom />} index />
 				<Route element={<Rooms />} path="/salas" />
-				<Route element={<Room />} path="/sala/:id" />
-				<Route element={<RecordRoomAudio />} path="/sala/:id/audio" />
+				<Route element={<Room />} path="/sala/:roomId" />
+				<Route element={<RecordRoomAudio />} path="/sala/:roomId/audio" />
 				{/* <Route element={<Room />} path="/sala/:id" /> */}
 			</Routes>
 		</BrowserRouter>

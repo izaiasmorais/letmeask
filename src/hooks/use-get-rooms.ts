@@ -19,7 +19,7 @@ const getRoomsResponseSchema = z.object({
 	data: z.array(roomSchema),
 });
 
-type GetRoomsResponse = HTTPSuccessResponse<Room[]> | HTTPErrorResponse;
+export type GetRoomsResponse = HTTPSuccessResponse<Room[]> | HTTPErrorResponse;
 
 const getRooms = async (): Promise<Room[]> => {
 	const response = await api.get<GetRoomsResponse>("/rooms");

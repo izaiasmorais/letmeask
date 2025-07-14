@@ -8,6 +8,7 @@ const questionSchema = z.object({
 	question: z.string(),
 	answer: z.string().nullable(),
 	createdAt: z.string(),
+	isGeneratingAnswer: z.boolean().optional(),
 });
 
 const roomByIdSchema = z.object({
@@ -28,7 +29,9 @@ const getRoomByIdResponseSchema = z.object({
 	data: roomByIdSchema,
 });
 
-type GetRoomByIdResponse = HTTPSuccessResponse<RoomById> | HTTPErrorResponse;
+export type GetRoomByIdResponse =
+	| HTTPSuccessResponse<RoomById>
+	| HTTPErrorResponse;
 
 const getRoomById = async (roomId: string): Promise<RoomById> => {
 	const response = await api.get<GetRoomByIdResponse>(`/rooms/${roomId}`);

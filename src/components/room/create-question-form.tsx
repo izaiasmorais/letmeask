@@ -37,6 +37,9 @@ export const CreateQuestionForm = ({ roomId }: CreateQuestionFormProps) => {
 								<FormControl>
 									<Textarea
 										className="min-h-[100px] resize-none border-gray-300 bg-white"
+										disabled={
+											isCreateQuestionLoading || form.formState.isSubmitting
+										}
 										placeholder="Digite sua pergunta aqui..."
 										{...field}
 									/>
@@ -50,7 +53,7 @@ export const CreateQuestionForm = ({ roomId }: CreateQuestionFormProps) => {
 				<div className="flex justify-end">
 					<Button
 						className="bg-violet-500 px-6 hover:bg-violet-600"
-						disabled={isCreateQuestionLoading}
+						disabled={isCreateQuestionLoading || form.formState.isSubmitting}
 						size="lg"
 						type="submit"
 					>

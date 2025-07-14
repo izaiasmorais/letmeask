@@ -18,6 +18,7 @@ type RecordRoomAudioParams = {
 
 export function RecordRoomAudio() {
 	const [isRecording, setIsRecording] = useState(false);
+
 	const recorder = useRef<MediaRecorder | null>(null);
 
 	const { roomId } = useParams<RecordRoomAudioParams>();
@@ -39,7 +40,7 @@ export function RecordRoomAudio() {
 
 		formData.append("file", audio, "audio.webm");
 
-		const response = await api.post(`/room/${roomId}/audio`, formData);
+		const response = await api.post(`/rooms/${roomId}/audio`, formData);
 
 		console.log(response.data);
 	}
